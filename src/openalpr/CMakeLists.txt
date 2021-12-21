@@ -64,10 +64,13 @@ TARGET_LINK_LIBRARIES(openalpr
 )
 
 
-install (FILES   alpr.h     DESTINATION    ${CMAKE_INSTALL_PREFIX}/include)
-install (FILES   alpr_c.h     DESTINATION    ${CMAKE_INSTALL_PREFIX}/include)
+install (FILES   alpr.h     DESTINATION    ${CMAKE_INSTALL_PREFIX}/include/openalpr)
+install (FILES   config.h     DESTINATION    ${CMAKE_INSTALL_PREFIX}/include/openalpr)
+install (FILES   constants.h     DESTINATION    ${CMAKE_INSTALL_PREFIX}/include/openalpr)
+install (FILES   alpr_c.h     DESTINATION    ${CMAKE_INSTALL_PREFIX}/include/openalpr)
 install (TARGETS openalpr-static DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 install (TARGETS openalpr   DESTINATION    ${CMAKE_INSTALL_PREFIX}/lib)
+install (TARGETS support   DESTINATION    ${CMAKE_INSTALL_PREFIX}/lib)
 
 # Compile GPU detector
 IF ( WITH_GPU_DETECTOR )
